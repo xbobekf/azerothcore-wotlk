@@ -6,6 +6,7 @@ pipeline {
             steps {
                 // Build your Docker images if needed
                 script {
+                    sh 'pwd'
                     sh 'docker compose down'
                 }
             }
