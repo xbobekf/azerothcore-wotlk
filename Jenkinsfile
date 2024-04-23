@@ -7,6 +7,7 @@ pipeline {
                 // Build your Docker images if needed
                 script {
                     sh 'pwd'
+                    sh 'ls -al'
                     sh 'docker compose down'
                 }
             }
