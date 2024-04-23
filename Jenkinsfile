@@ -24,7 +24,7 @@ pipeline {
             steps {
                 // Run Docker Compose
                 script {
-                    sh 'docker compose up -d --build'
+                    sh 'docker compose up --build'
                 }
             }
         }
