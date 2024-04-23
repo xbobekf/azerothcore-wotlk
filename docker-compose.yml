@@ -206,6 +206,22 @@ services:
       ac-database:
         condition: service_healthy
 
+  web-registartion:
+    container_name: web-registartion
+    image: web-registration:0.0.1
+    networks:
+      - ac-network
+    restart: unless-stopped
+    ports:
+      - 8081:8080
+    depends_on:
+      ac-database:
+        condition: service_healthy
+      ac-db-import:
+        condition: service_completed_successfully
+      ac-client-data-init:
+        condition: service_completed_successfully
+
 volumes:
   ac-database:
   ac-client-data:
