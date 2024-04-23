@@ -2,6 +2,14 @@ pipeline {
     agent any
     
     stages {
+        stage('CleanUp') {
+            steps {
+                // Build your Docker images if needed
+                script {
+                    sh 'docker compose down'
+                }
+            }
+        }
         stage('Build') {
             steps {
                 // Build your Docker images if needed
