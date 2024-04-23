@@ -87,6 +87,7 @@ services:
       - ${DOCKER_VOL_LOGS:-./env/dist/logs}:/azerothcore/env/dist/logs:delegated
       # client data
       - ${DOCKER_VOL_DATA:-ac-client-data}:/azerothcore/env/dist/data/:ro
+      - ${DOCKER_VOL_LUA:-./lua_scripts}:/azerothcore/lua_scripts
     depends_on:
       ac-database:
         condition: service_healthy
@@ -205,6 +206,23 @@ services:
     depends_on:
       ac-database:
         condition: service_healthy
+  
+  phpmyadmin:
+    image: phpmyadmin
+    networks:
+     - ac-network
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+    profiles: []
+    depends_on:
+      ac-database:
+        condition: service_healthy
+      ac-db-import:
+        condition: service_completed_successfully
+      ac-client-data-init:
+        condition: service_completed_successfully
 
   web-registartion:
     container_name: web-registartion
