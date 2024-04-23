@@ -38,6 +38,6 @@ runs:
         tags: ${{ steps.meta.outputs.tags }}
         target:  ${{ inputs.component-name }}
         build-args: |
-          USER_ID=1000
-          GROUP_ID=1000
+          USER_ID=0
+          GROUP_ID=0
           DOCKER_USER=acore

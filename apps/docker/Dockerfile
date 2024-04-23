@@ -108,8 +108,8 @@ RUN --mount=type=cache,target=/ccache,sharing=locked \
 
 FROM skeleton as runtime
 
-ARG USER_ID=1000
-ARG GROUP_ID=1000
+ARG USER_ID=0
+ARG GROUP_ID=0
 ARG DOCKER_USER=acore
 
 ENV ACORE_COMPONENT=undefined
