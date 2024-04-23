@@ -2,12 +2,6 @@ pipeline {
     agent any
     
     stages {
-        stage('Checkout') {
-            steps {
-                // Checkout your source code from your repository
-                git 'https://github.com/xbobekf/azerothcore-wotlk.git'
-            }
-        }
         stage('Build') {
             steps {
                 // Build your Docker images if needed
