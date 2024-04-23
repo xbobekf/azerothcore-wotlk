@@ -8,7 +8,7 @@
  **/
 
 // Basic Configuration - Adjust to match your website's details.
-$config['baseurl'] = "http://localhost:8081"; //  Must be a valid URL to prevent issues with loading images and templates.
+$config['baseurl'] = "https://web-wow.babushkas-ultimate.eu"; //  Must be a valid URL to prevent issues with loading images and templates.
 $config['page_title'] = "Simple Register"; // The title of your website as displayed in the browser tab.
 $config['language'] = "english"; // The default language for your website.
 $config['supported_langs'] = [ // Define supported languages here. You can remove any language you do not support.
